@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from common.models import IndexedTimeStampedModel
+from .manager import UserManager
 
 
 class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
@@ -13,6 +14,8 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
+
+    USERNAME_FIELD = 'email'
 
     class Meta:
         verbose_name = "User"

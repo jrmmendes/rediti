@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Subrediti, Post, Thread
 
-# Register your models here.
+admin.site.register(Subrediti)
+admin.site.register(Post)
+admin.site.register(Thread)

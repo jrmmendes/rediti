@@ -12,6 +12,8 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
     avatar = models.ImageField(blank=True, default='default.avatar.png')
     is_staff = models.BooleanField(default=False)
 
+    objects = UserManager()
+
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"

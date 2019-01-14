@@ -15,7 +15,7 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
-
+    
     USERNAME_FIELD = 'email'
 
     class Meta:

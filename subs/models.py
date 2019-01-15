@@ -46,3 +46,20 @@ class Post(IndexedTimeStampedModel):
 
     def __str__(self):
         return self.content
+
+
+class Subscription(IndexedTimeStampedModel):
+    """ Model que define uma inscrição em um subrediti.
+        (o usuário visualizará as últimas postagens de suas
+        inscrições) """
+
+    user = models.ForeignKey(User, related_name="subscription",
+                             on_delete=models.CASCADE)
+
+    sub = models.ForeignKey(Subrediti, related_name="subscription",
+                            on_delete=models.CASCADE)
+
+    Subscription = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = [('user', 'sub')]

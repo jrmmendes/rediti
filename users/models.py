@@ -23,4 +23,4 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
         verbose_name_plural = "Users"
 
     def __str__(self):
-        return self.username + "( " + self.email + ") "
+        return self.username + " (" + self.email + ") "

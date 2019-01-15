@@ -1,7 +1,6 @@
 from django.db import models
 from common.models import IndexedTimeStampedModel
 from users.models import User
-from django.utils.text import slugify
 
 
 class Subrediti(IndexedTimeStampedModel):
@@ -10,7 +9,7 @@ class Subrediti(IndexedTimeStampedModel):
     creator = models.ForeignKey(User, related_name='subreditis',
                                 on_delete=models.CASCADE)
     description = models.TextField()
-    slug = models.SlugField(max_length=200, unique=True, editable=False)
+    slug = models.SlugField(verbose_name='URL')
 
     def __str__(self):
         return self.name

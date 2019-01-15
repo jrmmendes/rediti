@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subrediti, Post, Thread
+from .models import Subrediti, Post, Thread, Subscription
 
 
 class SubreditiAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class SubreditiAdmin(admin.ModelAdmin):
 admin.site.register(Subrediti, SubreditiAdmin)
 admin.site.register(Post)
 admin.site.register(Thread)
+admin.site.register(Subscription)

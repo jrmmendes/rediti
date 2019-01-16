@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+body {
+  padding: 0;
+  padding-bottom: 50px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }
+
+h1 {
+  font-weight: 300; }
+
+/* Navbar */
+.navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.466); }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 2rem;
+  padding: 1rem; }
+
+.nav-links li {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.nav-links a:link {
+  color: #636363;
+  text-decoration: none; }
+  .nav-links a:link .active {
+    color: black; }
+
+.nav-links a:visited {
+  color: #636363; }
+
+.nav-links a:hover {
+  text-decoration: none;
+  color: black; }
+
+.brand-logo img {
+  max-height: 30px; }
+
+.page-footer {
+  font-size: 0.8rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: #111111;
+  color: white;
+  position: fixed;
+  bottom: 0; }
+
+/* User Profile */
+.card-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.profile-avatar {
+  width: 200px;
+  box-sizing: border-box; }
+
+.profile-avatar img {
+  width: 100%; }
+
+.profile-avatar figcaption {
+  display: flex;
+  height: 1.5em;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #7193FF; }
+
+.profile-avatar figcaption:hover {
+  background: #718ff1; }
+
+.profile-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+
+.auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px; }
+
+.auth-form fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: none; }
+
+.form-label {
+  display: block;
+  justify-content: flex-end; }
+
+.auth-form input {
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #b1b0b0;
+  background-color: #ececec; }
+
+.auth-form input:active {
+  background-color: white; }
+
+.auth-form button {
+  transition: all 200ms ease-in-out;
+  padding: 10px;
+  background: white;
+  color: #6b6b6b;
+  border: 1px solid #b1b0b0; }
+
+.auth-form button:hover {
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  background: #b1b0b0;
+  color: white;
+  margin-right: auto; }
+
+/*# sourceMappingURL=main.css.map */

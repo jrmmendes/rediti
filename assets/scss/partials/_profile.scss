@@ -1,0 +1,40 @@
+/* User Profile */
+.card-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-avatar{
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.profile-avatar img{
+    width: 100%;
+    // border-radius: 10px;
+}
+
+.profile-avatar figcaption{
+    display: flex;
+    height: 1.5em;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #7193FF;
+    // border-radius: 10px;
+}
+.profile-avatar figcaption:hover{
+    background: rgb(113, 143, 241);
+}
+
+.profile-infos{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    list-style: none;
+    // border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}

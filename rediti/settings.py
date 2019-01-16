@@ -63,7 +63,7 @@ ROOT_URLCONF = 'rediti.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,5 +132,8 @@ STATICFILES_DIRS = (
     base_dir_join('assets'),
 )
 
-MEDIA_ROOT = base_dir_join('mediafiles')
+MEDIA_ROOT = base_dir_join('media')
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title_block %}
+    Login
+{% endblock title_block %}
+
+{% block body_block %}
+    <form class="auth-form" method="post">
+        {% csrf_token %}
+        <fieldset>
+        {{ form.non_field_errors }} {% for field in form %}
+        <div>
+            <span class="form-label">{{ field.label_tag }}</span> {{ field }} {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="auth-form-button">Login</button>
+    </fieldset>
+    {% comment %} <a href="{% url 'users:signup' %}">Doesn't have an account? Create one now!</a> {% endcomment %}
+    </form>
+{% endblock body_block %}

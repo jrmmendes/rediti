@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title_block %}
+    User Profile
+{% endblock title_block %}
+
+{% block body_block %}
+    
+    
+    <div class="card-profile">
+        <h1>User information</h1>
+        
+        <figure class="profile-avatar">
+            <img src="{{ user.avatar.url }}" alt="User avatar">
+            <figcaption>{{ user.username }}</figcaption>
+        </figure>
+
+        <ul class="profile-infos">
+            <li>Username: {{ user.username }}</li>
+            <li>Email: {{ user.email }}</li>
+            <li>Karma: {{ user.karma }}</li>
+            
+        </ul>
+    </div>
+{% endblock body_block %}

@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <a href="/">
+        <figure class="brand-logo">
+            <img src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo.png" 
+                alt="Reddit logo">
+        </figure>
+    </a>
+    <ul class="nav-links">
+        <li><a href="/"> <i class="fas fa-home"></i> </a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'users:profile' user.pk %}"> Profile </a></li>
+        <li><a href="{% url 'users:logout' %}"> Logout </a></li>
+        {% else %}
+        <li><a href="{% url 'users:login' %}"> Login </a></li> |
+            <li><a href="#"> Signup </a></li>
+        {% endif %}
+    </ul>
+</nav>

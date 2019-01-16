@@ -63,3 +63,7 @@ class Subscription(IndexedTimeStampedModel):
 
     class Meta:
         unique_together = [('user', 'sub')]
+
+    def __str__(self):
+        return self.sub + "~> " + self.user
+    

@@ -5,8 +5,9 @@
 
 {% block body_block %}
     
-    
-    <div class="card-profile">
+<div class="container"> 
+
+    <aside class="profile-card">
         <h1>User information</h1>
         
         <figure class="profile-avatar">
@@ -20,5 +21,36 @@
             <li>Karma: {{ user.karma }}</li>
             
         </ul>
-    </div>
+    </aside>
+
+    <aside class="profile-card">    
+        <h1 class="aside-title"> Threads </h1>
+        {% for thread in user.threads.all %}
+        <div class="thread-card">
+            <h1>{{ thread.title }} </h1>
+            <h2> Created @ <a href="#">/{{thread.subrediti.slug}}</a></h2>
+            <ul>
+                <li>Upvotes: {{ thread.vote_count }}</li>
+            </ul>
+        </div>
+        {% empty %}
+        I can't see your threads -_-
+        {% endfor %}
+    </aside>
+
+    <aside class="profile-card">
+        <h1> Posts </h1>
+        {% for post in user.posts.all %}
+        <div class="post-card">
+            <h1> Posted @ <a href="#">{{post.thread.subrediti.slug}}/{{post.thread.pk}}.</a></h1>
+            <ul>
+                <li>Upvotes: {{ post.vote_count }}</li>
+                <li>Content: {{ post.content }}</li>
+            </ul>
+        </div>
+        {% empty %}
+        No posts here :'(
+        {% endfor %}
+    </aside>
+</div>
 {% endblock body_block %}

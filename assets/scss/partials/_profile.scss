@@ -1,9 +1,12 @@
 /* User Profile */
-.card-profile{
+.profile-card{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    height: 100%;
 }
 
 .profile-avatar{
@@ -35,6 +38,6 @@
     padding: 1rem;
     list-style: none;
     // border: 1px solid black;
-    border-radius: 10px;
+    // border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }

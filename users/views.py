@@ -1,10 +1,12 @@
 from django.views import generic
-from .models import User
-from .forms import UserForm
-from django.contrib.auth.views import LogoutView, LoginView
-from django.contrib.auth import get_user_model
+from django.contrib import auth
+from django.contrib.auth import get_user_model, authenticate, views
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
+
+from .models import User
+from .forms import UserForm
 
 
 class ProfileView(generic.DetailView):
@@ -14,11 +16,11 @@ class ProfileView(generic.DetailView):
     model = User
 
 
-class LogoutView(LogoutView):
+class LogoutView(views.LogoutView):
     next_page = 'common:home'
 
 
-class LoginView(LoginView):
+class LoginView(views.LoginView):
     success_url = 'common:home'
     template_name = 'users/login.html'
     redirect_authenticated_user = True
@@ -30,6 +32,7 @@ class LoginView(LoginView):
 
 
 class SignupView(generic.FormView):
+    form_class = UserForm
     success_url = 'users:login'
     template_name = 'users/signup.html'
     redirect_authenticated_user = True
@@ -39,4 +42,12 @@ class SignupView(generic.FormView):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return HttpResponseRedirect(reverse('common:home'))
-        return super(LoginView, self).get(request)
+        return super(SignupView, self).get(request)
+
+    def form_valid(self, form):
+        self.object = form.save()
+        user = authenticate(username=self.object.email,
+                            password=form.cleaned_data['password'])
+        auth.login(self.request, user)
+
+        return redirect('common:home')

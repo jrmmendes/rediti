@@ -2,3 +2,17 @@
 {% block title_block %}
     Signup
 {% endblock title_block %}
+{% block body_block %}
+<form class="auth-form" action="{% url 'users:signup' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.non_field_errors }} {% for field in form %}
+        <div>
+            <span class="form-label">{{ field.label_tag }}</span> {{ field }} {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="auth-form-button">Signup</button>
+    </fieldset>
+</form>
+
+{% endblock body_block %}

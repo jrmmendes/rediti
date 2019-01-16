@@ -57,11 +57,14 @@ h1 {
   bottom: 0; }
 
 /* User Profile */
-.card-profile {
+.profile-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+  height: 100%; }
 
 .profile-avatar {
   width: 200px;
@@ -86,7 +89,6 @@ h1 {
   flex-direction: column;
   padding: 1rem;
   list-style: none;
-  border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
 
 .auth-form {
@@ -129,5 +131,23 @@ h1 {
   background: #b1b0b0;
   color: white;
   margin-right: auto; }
+
+.post-card h2 {
+  font-size: 1rem; }
+
+.thread-card h2 {
+  font-size: 1rem; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+
+.container aside {
+  width: 30vw; }
+
+/* Need refactoring */
+* {
+  font-weight: 300; }
 
 /*# sourceMappingURL=main.css.map */

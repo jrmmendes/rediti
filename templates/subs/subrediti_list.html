@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title_block %}
+    Subreditis
+{% endblock title_block %}  
+
+{% block body_block %}
+    {% for sub in subs %}
+        <div class="sub-card">
+            <h1>{{ sub.name }}</h1>
+            <h2>by {{ sub.creator }}</h2>
+            <p> {{ sub.description }} </p>
+        </div>
+    {% empty %}
+    Ohhhhh... It's so cold here :( I need more subs!
+    {% endfor %}
+{% endblock body_block %}

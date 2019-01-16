@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title_block %}
+    {{ subrediti.name }}
+{% endblock title_block %}
+
+{% block body_block %}
+    <aside class="profile-card">    
+        <h1 class="aside-title"> Threads </h1>
+        {% for thread in sub.threads.all %}
+        <div class="thread-card">
+            <h1>{{ thread.title }} </h1>
+            <h2> Created @ <a href="#">/r/{{thread.subrediti.slug}}</a></h2>
+            <ul>
+                <li>Upvotes: {{ thread.vote_count }}</li>
+            </ul>
+        </div>
+        {% empty %}
+        I can't see your threads -_-
+        {% endfor %}
+    </aside>
+{% endblock body_block %}

@@ -10,6 +10,7 @@
             <h1>{{ sub.name }}</h1>
             <h2>by {{ sub.creator }}</h2>
             <p> {{ sub.description }} </p>
+            <a href="{% url 'subs:r' sub.slug %}">See subrediti</a>
         </div>
     {% empty %}
     Ohhhhh... It's so cold here :( I need more subs!

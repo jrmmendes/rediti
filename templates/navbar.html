@@ -7,8 +7,8 @@
     </a>
     <ul class="nav-links">
         <li><a href="/"> <i class="fas fa-home"></i> </a></li>
-        <li><a href="{% url 'subs:all' %}"> Subreditis </a></li>
         {% if user.is_authenticated %}
+        <li><a href="{% url 'subs:new' %}"> <i class="fas fa-plus"></i> Sub </a></li>
         <li><a href="{% url 'users:profile' user.pk %}"> Profile </a></li>
         <li><a href="{% url 'users:logout' %}"> Logout </a></li>
 
@@ -16,5 +16,6 @@
         <li><a href="{% url 'users:login' %}"> Login </a></li> |
             <li><a href="{% url 'users:signup' %}"> Signup </a></li>
         {% endif %}
+        <li><a href="{% url 'subs:all' %}"> Subreditis </a></li>
     </ul>
 </nav>

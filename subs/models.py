@@ -5,7 +5,7 @@ from users.models import User
 
 class Subrediti(IndexedTimeStampedModel):
     """ Model que define um subrediti, que agrega várias threads. """
-    name = models.CharField(max_length=50, default='New post')
+    name = models.CharField(max_length=50, default='New subrediti')
     creator = models.ForeignKey(User, related_name='subreditis',
                                 on_delete=models.CASCADE)
     description = models.TextField()

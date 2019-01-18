@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title_block %}
+    New Post
+{% endblock title_block %}
+
+{% block body_block %}
+    <form class="auth-form" method="post">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.non_field_errors }} {% for field in form %}
+        <div>
+            <span class="form-label">{{ field.label_tag }}</span> {{ field }} {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="auth-form-button">Create</button>
+    </fieldset>
+</form>
+{% endblock body_block %}

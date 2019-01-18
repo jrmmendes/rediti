@@ -28,7 +28,7 @@
         {% for thread in user.threads.all %}
         <div class="thread-card">
             <h1>{{ thread.title }} </h1>
-            <h2> Created @ <a href="#">/r/{{thread.subrediti.slug}}</a></h2>
+            <h2> Created @ <a href="{% url 'subs:r' thread.subrediti.slug %}">/r/{{thread.subrediti.slug}}</a></h2>
             <ul>
                 <li>Upvotes: {{ thread.vote_count }}</li>
             </ul>
@@ -42,7 +42,7 @@
         <h1> Posts </h1>
         {% for post in user.posts.all %}
         <div class="post-card">
-            <h1> Posted @ <a href="#">/r/{{post.thread.subrediti.slug}}/{{post.thread.pk}}.</a></h1>
+            <h1> Posted @ <a href="#">/r/{{post.thread.subrediti.slug}}#{{post.thread.pk}}.</a></h1>
             <ul>
                 <li>Upvotes: {{ post.vote_count }}</li>
                 <li>Content: {{ post.content }}</li>

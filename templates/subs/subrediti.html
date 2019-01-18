@@ -1,19 +1,21 @@
 {% extends "base.html" %}
-
+https://jrmmendes.github.io
 {% block title_block %}
     {{ subrediti.name }}
 {% endblock title_block %}
 
 {% block body_block %}
     <aside class="profile-card">    
-        <h1 class="aside-title"> Threads </h1>
-        {% for thread in sub.threads.all %}
+        <h1 class="aside-title"> Threads @ {{ subrediti.name }} <a href="{% url 'subs:new_thread' %}?sub={{ subrediti.id }}"><i class="fas fa-plus"></i> New Thread </a>
+ </h1>
+        {% for thread in subrediti.threads.all %}
         <div class="thread-card">
             <h1>{{ thread.title }} </h1>
-            <h2> Created @ <a href="#">/r/{{thread.subrediti.slug}}</a></h2>
+            <h2> Created @ <a href="{% url 'subs:r' subrediti.slug %}">/r/{{thread.subrediti.slug}}</a></h2>
             <ul>
                 <li>Upvotes: {{ thread.vote_count }}</li>
             </ul>
+            <li><a href="{% url 'subs:create_post' %}?thread={{ thread.id }}"> <i class="fas fa-plus"></i> Post </a></li>
         </div>
         {% empty %}
         I can't see your threads -_-
